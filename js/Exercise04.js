@@ -1,9 +1,9 @@
 const actualizarHora = () => {
-    const reloj = document.getElementById('reloj')
-    const ahora = new Date()
-    let hours = ahora.getHours()
-    let minutes = ahora.getMinutes()
-    let seconds = ahora.getSeconds()
+    const clock = document.getElementById('clock')
+    const now = new Date()
+    let hours = now.getHours()
+    let minutes = now.getMinutes()
+    let seconds = now.getSeconds()
     let amPm = 'AM'
 
     if (hours >= 12) {
@@ -22,7 +22,7 @@ const actualizarHora = () => {
         seconds = '0' + seconds
     }
 
-    reloj.textContent = `${hours}:${minutes}:${seconds} ${amPm}`
+    clock.textContent = `${hours}:${minutes}:${seconds} ${amPm}`
 }
 
 actualizarHora()
