@@ -12,7 +12,7 @@ const displayRecipes = () => {
     const recipeList = document.getElementById("recipe-list")
     recipeList.innerHTML = ""
 
-    recipes.forEach((recipe, index) => {
+    recipes.forEach(recipe => {
         const li = document.createElement("li")
         li.textContent = `${recipe.name}: ${recipe.explanation}`
         recipeList.appendChild(li)
