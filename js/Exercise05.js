@@ -29,6 +29,5 @@ const deleteRecipe = () =>{
     }
 
     recipes.splice(recipeNumber - 1, 1)
-    console.log("a")
     displayRecipes()
 }
