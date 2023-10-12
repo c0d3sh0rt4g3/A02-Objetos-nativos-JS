@@ -1,36 +1,40 @@
-let newWindow
-let width = 400
-let height = 400
-let resizing = true
+let newWindow;
+let width = 400;
+let height = 400;
+let resizing = true;
 
-
-const openWindow = ()=> {
+const openWindow = () => {
+    // If the window is already opened, we close it
     if (newWindow) {
-        newWindow.close()
+        newWindow.close();
     }
 
-    let left = Math.floor(Math.random() * (window.innerWidth - width))
-    let top = Math.floor(Math.random() * (window.innerHeight - height))
+    // We get the window position randomly
+    let left = Math.floor(Math.random() * (window.innerWidth - width));
+    let top = Math.floor(Math.random() * (window.innerHeight - height));
 
-    newWindow = window.open('', 'Resizable window', `width=${width}, height=${height}, left=${left}, top=${top}`)
-}
+    // We open a new window with the parameters given
+    newWindow = window.open('', 'Ventana Redimensionable', `width=${width}, height=${height}, left=${left}, top=${top}`);
+};
 
-const resizeWindow = ()=> {
+const resizeWindow = () => {
+    // We start resizing the window reducing its size, when its size gets to 160 x 160, it starts to grow again
     if (resizing) {
-        width -= 40
-        height -= 40
-    if (width <= 160) {
-        resizing = false
-    }
+        width -= 40;
+        height -= 40;
+        if (width <= 160 || height <= 160) {
+            resizing = false;
+        }
     } else {
-        width += 40
-        height += 40
+        width += 40;
+        height += 40;
     }
 
-    newWindow.resizeTo(width, height)
+    newWindow.resizeTo(width, height);
 
-    if (width <= 160 && !resizing) {
-        clearInterval(resizeInterval)
+    if (width >= 400 && height >= 400) {
+        clearInterval(resizeInterval);
     }
-}
-const resizeInterval = setInterval(resizeWindow, 1000)
+};
+
+const resizeInterval = setInterval(resizeWindow, 1000);
