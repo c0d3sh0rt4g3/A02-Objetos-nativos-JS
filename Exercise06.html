@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6</title>
+    <script src="./js/Exercise06.js"></script>
+</head>
+<body onload="makeTable()">
+    <table id="resultsTable">
+        <tr>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Points</th>
+        </tr>
+    </table>
+    <form id="addTeamForm" onsubmit="event.preventDefault(); addNewTeam()">
+        <label for="teamName">Team Name:</label>
+        <input id="teamName" type="text" value="Cadiz">
+        <label for="teamPoints">Team points:</label>
+        <input id="teamPoints" type="number" value="15">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
