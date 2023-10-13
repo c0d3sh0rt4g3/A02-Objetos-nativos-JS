@@ -36,7 +36,7 @@ const displaySessionStorage = () => {
 }
 
 // We add an event listener to the 'beforeunload' event to clear the local storage when the page is about to be unloaded.
-window.addEventListener('beforeunload', function(event) {
+window.addEventListener('beforeunload', function() {
     // Clear the local storage (localStorage).
     localStorage.clear()
 })
